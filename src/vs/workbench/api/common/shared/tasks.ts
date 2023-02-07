@@ -27,6 +27,12 @@ export interface IRunOptionsDTO {
 	reevaluateOnRerun?: boolean;
 }
 
+export interface ITaskConfigurationOptionsDTO {
+	cwd?: string;
+
+	env?: { [key: string]: string };
+}
+
 export interface IExecutionOptionsDTO {
 	cwd?: string;
 	env?: { [key: string]: string };
@@ -104,6 +110,7 @@ export interface ITaskDTO {
 	problemMatchers: string[];
 	hasDefinedMatchers: boolean;
 	runOptions?: IRunOptionsDTO;
+	taskConfigurationOptions?: ITaskConfigurationOptionsDTO
 }
 
 export interface ITaskSetDTO {

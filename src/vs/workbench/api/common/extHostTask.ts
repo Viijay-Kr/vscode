@@ -280,6 +280,7 @@ export namespace TaskDTO {
 			problemMatchers: value.problemMatchers,
 			hasDefinedMatchers: (value as types.Task).hasDefinedMatchers,
 			runOptions: value.runOptions ? value.runOptions : { reevaluateOnRerun: true },
+			taskConfigurationOptions: value.configurationOptions ? value.configurationOptions : undefined,
 			detail: value.detail
 		};
 		return result;
@@ -333,6 +334,9 @@ export namespace TaskDTO {
 		}
 		if (value.detail) {
 			result.detail = value.detail;
+		}
+		if (value.taskConfigurationOptions) {
+			result.configurationOptions = (value.taskConfigurationOptions as vscode.ConfigurationOptions);
 		}
 		return result;
 	}

@@ -340,6 +340,9 @@ namespace TaskDTO {
 				}
 			}
 		}
+		if (ConfiguringTask.is(task)) {
+			result.taskConfigurationOptions = task.configurationProperties.options
+		}
 		return result;
 	}
 
